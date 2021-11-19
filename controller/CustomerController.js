@@ -168,7 +168,7 @@ $('#txtCustomerId,#txtCustomerName,#txtCustomerAddress,#txtCustomerSalary').on('
 
     if (cusIdRegEx.test(input1)) {
         $('#txtCustomerId').css('border', '2px solid green');
-        $('#txtCustomerId').text("");
+        $('#lblCustomerId').text("");
         if (event.key === "Enter") {
             $('#txtCustomerName').focus();
         }
@@ -187,7 +187,6 @@ $('#txtCustomerId,#txtCustomerName,#txtCustomerAddress,#txtCustomerSalary').on('
                 if (cusSalaryRegEx.test(input4)) {
                     $('#txtCustomerSalary').css('border', '2px solid green');
                     $('#lblCustomerSalary').text("");
-                    enableButton();
                     if (event.key === "Enter") {
                         $('#btnCustomerAdd').click();
                         $('#txtCustomerId').focus();
@@ -196,28 +195,20 @@ $('#txtCustomerId,#txtCustomerName,#txtCustomerAddress,#txtCustomerSalary').on('
                     $('#txtCustomerSalary').css('border', '2px solid red');
                     $('#lblCustomerSalary').text("Required field. Pattern:-(100.00 or 100)");
 
-
-                    disableButton();
                 }
             } else {
                 $('#txtCustomerAddress').css('border', '2px solid red');
                 $('#lblCustomerAddress').text("Required field. Minimum 5");
 
-
-                disableButton();
             }
         } else {
             $('#txtCustomerName').css('border', '2px solid red');
-            $('#txtCustomerName').text("Required field. 5 to 20 characters Allowed.");
+            $('#lblCustomerName').text("Required field. 5 to 20 characters Allowed.");
 
-
-            disableButton();
         }
     } else {
         $('#txtCustomerId').css('border', '2px solid red');
-        $('#txtCustomerId').text("Required field. Pattern:-(C00-000)");
+        $('#lblCustomerId').text("Required field. Pattern:-(C00-000)");
 
-
-        disableButton();
     }
 });

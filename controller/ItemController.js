@@ -184,7 +184,6 @@ $('#txtItemCode,#txtItemName,#txtItemQty,#txtItemPrice').on('keyup', function (e
                 if (priceRegEx.test(input4)) {
                     $('#txtItemPrice').css('border', '2px solid green');
                     $('#lblPrice').text("");
-                    enableButton2();
                     if (event.key === "Enter") {
                         $('#btnItemAdd').click();
                         $('#txtItemCode').focus();
@@ -192,23 +191,19 @@ $('#txtItemCode,#txtItemName,#txtItemQty,#txtItemPrice').on('keyup', function (e
                 } else {
                     $('#txtItemPrice').css('border', '2px solid red');
                     $('#lblPrice').text("Required field. Pattern:-(100.00 or 100)");
-                    disableButton2();
                 }
             } else {
                 $('#txtItemQty').css('border', '2px solid red');
                 $('#lblQty').text("Required field. Maximum 5");
-                disableButton2();
             }
         } else {
             $('#txtItemName').css('border', '2px solid red');
             $('#lblName').text("Required field. characters and numbers Allowed.");
 
-            disableButton2();
         }
     } else {
         $('#txtItemCode').css('border', '2px solid red');
         $('#lblCode').text("Required field. Pattern:-(I00-000)");
 
-        disableButton2();
     }
 });
